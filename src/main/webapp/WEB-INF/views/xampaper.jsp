@@ -297,7 +297,7 @@
 
     <script>
         var data = '${timeleft}';
-        document.getElementById("time").innerHTML = data;
+        document.getElementById("time").innerHTML = data  + " minutes left";
 
 
         
