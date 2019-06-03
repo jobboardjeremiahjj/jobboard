@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `company`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `company` (
-  `companyId` int(11) NOT NULL AUTO_INCREMENT,
+  `companyId` int(11) GENERATED ALWAYS AS IDENTITY not null primary key,
   `companyName` varchar(255) NOT NULL,
   `headquarters` varchar(255) NOT NULL,
   `companyUser` varchar(255) NOT NULL,
@@ -53,7 +53,7 @@ DROP TABLE IF EXISTS `interested`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `interested` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int(11) GENERATED ALWAYS AS IDENTITY not null primary key,
   `jobId` int(11) NOT NULL,
   `jobSeekerId` int(11) NOT NULL,
   PRIMARY KEY (`ID`),
@@ -83,7 +83,7 @@ DROP TABLE IF EXISTS `jobapplication`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jobapplication` (
-  `appId` int(11) NOT NULL AUTO_INCREMENT,
+  `appId` int(11) GENERATED ALWAYS AS IDENTITY not null primary key,
   `jobId` int(11) NOT NULL,
   `jobSeekerId` int(11) NOT NULL,
   `resume` tinyint(4) DEFAULT '0',
@@ -115,7 +115,7 @@ DROP TABLE IF EXISTS `jobposting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jobposting` (
-  `jobId` int(11) NOT NULL AUTO_INCREMENT,
+  `jobId` int(11) GENERATED ALWAYS AS IDENTITY not null primary key,
   `companyId` int(11) NOT NULL,
   `state` int(11) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
@@ -169,7 +169,7 @@ DROP TABLE IF EXISTS `jobseeker`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `jobseeker` (
-  `jobSeekerId` int(11) NOT NULL AUTO_INCREMENT,
+  `jobSeekerId` int(11) GENERATED ALWAYS AS IDENTITY not null primary key,
   `firstName` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL,
   `emailId` varchar(255) NOT NULL,
